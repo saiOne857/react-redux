@@ -1,0 +1,20 @@
+{
+  "name": "react-redux-webpack",
+  "version": "1.0.0",
+  "description": "React redux webpack starterkit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@lrnrpath.bitbucket.org:lrnrpath/react-redux-webpack.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "webpack"
+  ],
+  "author": "LrnrPath",
+  "license": "ISC"
+}

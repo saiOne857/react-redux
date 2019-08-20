@@ -1,4 +1,4 @@
 import test from './test';
-import './index.css'
+import Style from './index.css'
 
-console.log(test)
+console.log(Style)

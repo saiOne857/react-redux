@@ -2,7 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
+const ExtractCssChunks = require("extract-css-chunks-webpack-plugin")
 
+const extractCssChunks = new ExtractCssChunks({
+  filename: '[name].css'
+})
 module.exports = {
   entry: './index.js',
   mode: 'development',
@@ -15,6 +19,7 @@ module.exports = {
     new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({ template : 'index.html'}),
+    extractCssChunks
    ],
   devServer: {
     contentBase: path.resolve(__dirname, 'public/assets'),
@@ -37,7 +42,16 @@ module.exports = {
     },
     {
       test: /\.css$/,
-      use: "css-loader"
+      use: [
+        {
+          loader: ExtractCssChunks.loader,
+          options: {
+              hot: true,
+              reloadAll: true,
+          }
+      },
+        'css-loader'
+      ].filter(Boolean)
     }
   ]
   }

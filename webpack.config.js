@@ -50,7 +50,8 @@ module.exports = {
               reloadAll: true,
           }
       },
-        'css-loader'
+        'css-loader',
+        'postcss-loader'
       ].filter(Boolean)
     }
   ]

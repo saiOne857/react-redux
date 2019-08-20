@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './index.js',
@@ -11,8 +12,9 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
   },
   plugins: [
+    new webpack.ProgressPlugin(),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({ template : 'index.html'}),
-    new CleanWebpackPlugin(['public'])
    ],
   devServer: {
     contentBase: path.resolve(__dirname, 'public/assets'),

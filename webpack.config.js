@@ -31,6 +31,7 @@ module.exports = {
   module: {
     rules: [{
         test: /\.(jpg|png|gif|svg)$/,
+        exclude: /(node_modules)/,
         use: [
         {
             loader: 'file-loader',
@@ -42,6 +43,7 @@ module.exports = {
     },
     {
       test: /\.css$/,
+      exclude: /(node_modules)/,
       use: [
         {
           loader: ExtractCssChunks.loader,
@@ -53,7 +55,17 @@ module.exports = {
         'css-loader',
         'postcss-loader'
       ].filter(Boolean)
-    }
+    },
+    {
+      test: /\.js$/,
+      exclude: /(node_modules)/,
+      use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
+      }
+  }
   ]
   }
 };

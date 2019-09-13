@@ -1,4 +1,5 @@
-import test from './test';
-import Style from './index.css'
+import "@babel/polyfill";
+import test from './test'
+import './index.css'
 
-console.log(Style)
+console.log(test)

@@ -21,13 +21,6 @@ module.exports = {
     new HtmlWebpackPlugin({ template : 'index.html'}),
     extractCssChunks
    ],
-  devServer: {
-    contentBase: path.resolve(__dirname, 'public/assets'),
-    stats: 'errors-only',
-    open: true,
-    port: 8080,
-    compress: true
-  },
   module: {
     rules: [{
         test: /\.(jpg|png|gif|svg)$/,

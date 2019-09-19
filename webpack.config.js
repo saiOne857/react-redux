@@ -45,7 +45,14 @@ module.exports = {
               reloadAll: true,
           }
       },
-        'css-loader',
+      {
+        loader : 'css-loader',
+        options : {
+          url: false,
+          modules: { localIdentName: '[name]-[local]' },
+          importLoaders: 1
+        }
+      },
         'postcss-loader'
       ].filter(Boolean)
     },

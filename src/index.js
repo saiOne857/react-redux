@@ -1,5 +1,8 @@
 import "@babel/polyfill";
-import test from './test'
-import './index.css'
-
-console.log(test)
+import React from "react";
+import ReactDOM from "react-dom";
+import App from './components/App';
+ReactDOM.render(
+  <App />,
+  document.getElementById('app')
+);

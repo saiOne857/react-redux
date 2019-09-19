@@ -1,3 +1,6 @@
 import React from 'react';
-const App = props => <div>Our main component</div>
+import RaisedButton from 'material-ui/RaisedButton';
+const App = props => <div>
+ <RaisedButton label="CLICK ME" />
+</div>
 export default App;

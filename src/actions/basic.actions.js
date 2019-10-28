@@ -11,7 +11,7 @@ export function fetchPosts() {
     return fetch('https://my-json-server.typicode.com/typicode/demo/posts')
     .then(
        response => response.json(),
-       error => console.log('An error occurred.', error),
+       error => console.log('An error occurred.', error)
    )
     .then((json) => {
        dispatch(receivedPosts(json));

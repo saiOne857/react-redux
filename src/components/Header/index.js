@@ -1,28 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import Style from './header.css';
 
-const Header = (props) => <div>
+const Header = (props) => <div className={Style.header}>
     <ul>
         <li>
-            <Link exact activeClassName="active" to="/">
+            <NavLink exact activeClassName={Style.active} to="/">
                 Home
-            </Link>
+            </NavLink>
         </li>
         <li>
-            <Link exact activeClassName="active" to="/">
-                Users
-            </Link>
-        </li>
-        <li>
-            <Link exact activeClassName="active" to="/">
+            <NavLink exact activeClassName={Style.active} to="/about">
                 About Us
-            </Link>
+            </NavLink>
         </li>
         <li>
-            <Link exact activeClassName="active" to="/">
+            <NavLink exact activeClassName={Style.active} to="/contactus">
                 Contact Us
-            </Link>
+            </NavLink>
         </li>
     </ul>
 </div>

@@ -12,14 +12,17 @@
     padding: 0;
 }
 
-.header >ul >li {
-    float: left;
-    height: 50px;
-    padding: 16px;
-    text-align: center;
-    font-size: 18px;
+.header > ul > li {
+    float : left;
+    font-size: 20px;
+    font-weight: 300;
+    padding : 15px 20px 15px 20px;
+    line-height: 20px;
 }
 
+.header > ul >li >a {
+    text-decoration: none;
+}
 .active {
     color: red;
 }

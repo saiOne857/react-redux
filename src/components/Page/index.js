@@ -11,15 +11,14 @@ class Page extends React.Component {
     }
     render() {
         return(
-            <div className={Style.page}>
+            <div className={Style.container}>
                 <CssBaseline />
-
                 <div className={Style.wrap}>
                     <Header/>
-                    <div className={Style.content} >
-                    {
-                        this.props.children
-                    }
+                    <div className={Style.content}>
+                        {
+                            this.props.children
+                        }
                     </div>
                 </div>
                 <Footer />

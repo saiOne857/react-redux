@@ -1,13 +1,18 @@
 
 
-.page {
+.container {
     height: 100vh;
+    background-color: white;
 }
 
 .wrap {
-    min-height: 100vh;
+    min-height: 100%;
+    padding-bottom : 50px;
+    background-color: white;
 }
 
 .content {
-    padding: 50px;
+    width: 600px;
+    margin: 0 auto;
+    padding-top: 50px;
 }

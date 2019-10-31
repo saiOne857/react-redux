@@ -7,7 +7,7 @@ import Page from './../Page'
 const App = props => <Page>
     <div>
         <Button variant="outlined" onClick={() => props.onClick()} >
-            Increment
+            Click to Increment
             </Button>
         {props.counter}
         {JSON.stringify(props.posts)}

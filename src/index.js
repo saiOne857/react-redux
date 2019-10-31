@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { reducers } from './reducers';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import App from './components/App';
 import About from './components/Aboutus';
 import Contactus from './components/Contactus';

@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from '@material-ui/core/Button';
 import {connect } from 'react-redux';
 import { fetchPosts } from './../../actions/basic.actions'
 import Page from './../Page'
 const App = props => <Page>
     <div>
-        <RaisedButton label={'Click get Posts'} onClick={() => props.onClick()} />
+        <Button variant="outlined" onClick={() => props.onClick()} >
+            Click to increment
+            </Button>
         {props.counter}
         {JSON.stringify(props.posts)}
     </div>
@@ -28,7 +30,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-      onClick: () => dispatch(fetchPosts())
+      onClick: () => dispatch({ type : 'INCREMENT'})
   }
 }
 

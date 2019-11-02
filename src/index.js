@@ -15,7 +15,7 @@ import Router from './routes';
 
 const history = createBrowserHistory();
 
-let store = createStore(reducers(history),{} ,compose(applyMiddleware(thunk, logger, routerMiddleware(history))));
+let store = createStore(reducers(history),{} ,compose(applyMiddleware(thunk, logger, routerMiddleware(history)), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
 ReactDOM.render(
     <MuiThemeProvider>
         <Provider store={store}>

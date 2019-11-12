@@ -1,0 +1,31 @@
+
+
+.item {
+    padding : 12px;
+    margin-top: 10px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.item:first-of-type {
+    margin: 0px;
+}
+
+.item .text {
+    float : left;
+    line-height: 48px;
+}
+
+.item .actions {
+    float: right;
+}
+
+.button {
+    height: 15px;
+}
+
+.icon {
+    height: 15px;
+    width: 15px;
+}

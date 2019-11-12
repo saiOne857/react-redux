@@ -1,0 +1,17 @@
+
+
+.holder {
+    width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.text {
+    float : left;
+    width: 80%;
+}
+.button {
+    float: right;
+    width: 15%;
+}

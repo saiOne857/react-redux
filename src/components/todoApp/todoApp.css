@@ -1,0 +1,36 @@
+
+
+.app_container {
+    width: 100%;
+    background-color: #eeeeee;
+}
+
+.leftPane {
+    float: left;
+    display: inline-block;
+    width: 30%;
+    border-right: solid 1px #111111;
+}
+
+.rightPane {
+    float: right;
+    display: inline-block;
+    width: 65%;
+}
+
+
+.leftPane > ul {
+    list-style: none;
+}
+
+.action {
+    height: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.action:hover {
+    background-color: #dddddd;
+}

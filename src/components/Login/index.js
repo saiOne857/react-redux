@@ -17,17 +17,22 @@ class Login extends React.Component {
 
         this.state = {
             userName : '',
-            password: ''
+            password: '',
+            dirty: {
+                userName: false,
+                password: false
+            }
         }
     }
 
     handleTextChange(e) {
         if(e) {
-            const update = {};
+            const update = {
+                dirty : {}
+            };
             update[e.target.name] = e.target.value;
-            this.setState(update, (newState)=> {
-                console.log(newState);
-            });
+            update['dirty'][e.target.name] = true;
+            this.setState(update);
         }
     }
 
@@ -40,6 +45,15 @@ class Login extends React.Component {
         }
     }
 
+    shouldComponentUpdate(newProps,newState) {
+        console.log('######## new props '+newProps.user)
+        if(newProps.user != this.props.user) {
+            console.log('######## new changed prop '+newProps.user);
+            this.props.history.push('/todoApp');
+        }
+        return true;
+    }
+
     render() {
         const { classes } = this.props;
         return(<Page>
@@ -49,7 +63,7 @@ class Login extends React.Component {
                     label="User Name"
                     name="userName"
                     type="text"
-                    error={!this.state.userName}
+                    error={!this.state.userName && this.state.dirty.userName}
                     helperText={!this.state.userName && "Username can't be empty"}
                     className={classes.textField}
                     value={this.state.userName}
@@ -58,7 +72,7 @@ class Login extends React.Component {
                     label="Password"
                     name="password"
                     type="password"
-                    error={!this.state.password}
+                    error={!this.state.password && this.state.dirty.password}
                     helperText={!this.state.password && "Password can't be empty"}
                     className={classes.textField}
                     value={this.state.password}
@@ -78,7 +92,14 @@ class Login extends React.Component {
 
 Login.propTypes = {
     classes : PropTypes.object.isRequired,
-    userReducer: PropTypes.func.isRequired
+    user: PropTypes.func.isRequired
+}
+
+
+const mapStateToProps = (state) => {
+    return {
+        user: state.user.userName
+    }
 }
 
 
@@ -108,4 +129,4 @@ const styles = {
     }
 }
 
-export default connect(null, mapDispatchToProps)(withStyles(styles)(Login));
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Login));
